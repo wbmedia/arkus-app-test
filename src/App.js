@@ -1,15 +1,17 @@
 import './App.scss';
 import ShowUser from './components/showUsers';
 import { useSelector } from 'react-redux';
-import AddButton from './components/addButton';
+
+import ModalComponent from './components/modalComponent';
+
 function App() {
   const users = useSelector((state) => state.users);
   console.log(users);
   return (
-    <div className='App'>
-      <h1 className='App__heading'>Welcome</h1>
+    <div className='App mt-8'>
+      <h1 className='App__heading'>Contact List</h1>
       <ShowUser />
-      <AddButton />
+      <ModalComponent />
     </div>
   );
 }

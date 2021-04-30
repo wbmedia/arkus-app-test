@@ -13,7 +13,6 @@ const Users = () => {
   }, [dispatch]);
   return (
     <div>
-      <h1>Show Users List</h1>
       <div className='row'>
         {loading
           ? 'Loading...'
