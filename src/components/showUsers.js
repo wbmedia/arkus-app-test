@@ -18,7 +18,8 @@ const Users = () => {
           ? 'Loading...'
           : error
           ? error.message
-          : users.map((u) => (
+          : users.length > 0 &&
+            users.map((u) => (
               <div className='column' key={u.id}>
                 <div className='App__box'>
                   <img

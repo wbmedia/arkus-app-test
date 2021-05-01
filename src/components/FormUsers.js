@@ -1,7 +1,6 @@
 import React from 'react';
-import { Form } from 'semantic-ui-react';
-import userForm from './userForm';
-
+import { Form, Button } from 'semantic-ui-react';
+import UserForm from './userForm';
 import useUserDetails from './../hooks/useUsersDetails';
 
 export default function FormUser() {
@@ -14,11 +13,12 @@ export default function FormUser() {
     setEmail,
     avatar,
     setAvatar,
+    addUser,
   } = useUserDetails();
   return (
     <div>
       <Form>
-        <userForm
+        <UserForm
           first_name={first_name}
           last_name={last_name}
           email={email}
@@ -28,6 +28,20 @@ export default function FormUser() {
           setEmail={setEmail}
           setAvatar={setAvatar}
         />
+        <Button
+          style={{
+            backgroundColor: '#ff7979',
+            color: 'white',
+            borderRadius: 0,
+            right: '100px',
+            bottom: '-86px',
+            position: 'absolute',
+          }}
+          onClick={() => addUser()}
+        >
+          {' '}
+          Save
+        </Button>
       </Form>
     </div>
   );
