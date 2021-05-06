@@ -27,9 +27,17 @@ export const getUsers = () => async (dispatch) => {
   }
 };
 
-export const postUser = () => async (dispatch) => {
+export const postUser = (first_name, last_name, avatar, email) => async (
+  dispatch
+) => {
   try {
-    const response = await axios.post(`https://reqres.in/api/users`);
+    const response = await axios.post(
+      `https://reqres.in/api/users`,
+      first_name,
+      last_name,
+      avatar,
+      email
+    );
 
     dispatch({
       type: ADD_USER_ACTION,
@@ -39,12 +47,20 @@ export const postUser = () => async (dispatch) => {
     console.log(response.data);
     dispatch({
       type: ADD_USER_SUCCESS,
-      payload: response.data,
+      payload: [response.data],
     });
+
+    //return Promise.resolve(response.data);
   } catch (error) {
     dispatch({
       type: ADD_USER_FAIL,
       payload: error,
     });
   }
+};
+
+export const editUser = (id) => async (dispatch) => {
+  try {
+    const response = await axios.post(`https://reqres.in/api/users/ ${id}`);
+  } catch (err) {}
 };

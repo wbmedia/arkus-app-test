@@ -13,6 +13,9 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
+  if (typeof state === undefined) {
+    return initialState;
+  }
   switch (action.type) {
     case GET_USERS_FETCH:
       return {
@@ -42,12 +45,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        users: action.payload,
+        users: [...state.users, action.payload],
       };
 
     case ADD_USER_FAIL:
       return {
-        loading: true,
+        loading: false,
         error: action.payload,
       };
 

@@ -8,6 +8,7 @@ export default function useUserDetails() {
   const [email, setEmail] = useState('');
   const [avatar, setAvatar] = useState('');
   const [error, setError] = useState(null);
+  const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
 
   function addUser() {
@@ -25,6 +26,7 @@ export default function useUserDetails() {
       setEmail('');
       setAvatar('');
       setError(null);
+      setOpen(false);
     } else {
       setError('All Fields are requied');
     }
@@ -41,5 +43,7 @@ export default function useUserDetails() {
     error,
     setError,
     addUser,
+    open,
+    setOpen,
   };
 }

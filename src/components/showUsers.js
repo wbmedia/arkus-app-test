@@ -19,7 +19,7 @@ const Users = () => {
           : error
           ? error.message
           : users.length > 0 &&
-            users.map((u) => (
+            users.flatMap((u) => (
               <div className='column' key={u.id}>
                 <div className='App__box'>
                   <img
