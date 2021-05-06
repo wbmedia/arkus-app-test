@@ -58,9 +58,3 @@ export const postUser = (first_name, last_name, avatar, email) => async (
     });
   }
 };
-
-export const editUser = (id) => async (dispatch) => {
-  try {
-    const response = await axios.post(`https://reqres.in/api/users/ ${id}`);
-  } catch (err) {}
-};
