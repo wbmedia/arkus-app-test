@@ -44,7 +44,10 @@ body {
     flex: 1;
   }
   .button {
-    bottom: -85px !important;
+    bottom: -86px !important;
+  }
+  .add-button {
+    position: fixed !important;
   }
 }
 
