@@ -47,7 +47,7 @@ export const postUser = (first_name, last_name, avatar, email) => async (
     console.log(response.data);
     dispatch({
       type: ADD_USER_SUCCESS,
-      payload: [response.data],
+      payload: response.data,
     });
 
     //return Promise.resolve(response.data);
