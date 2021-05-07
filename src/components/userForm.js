@@ -49,9 +49,8 @@ export default function UserForm({
       <Form.Group>
         <Form.Input
           width={12}
-          label='Avatar'
-          type='file'
-          name='password'
+          label='Enter Avatar Url'
+          name='avatar'
           required
           onChange={(e) => setAvatar(e.target.value)}
           value={avatar}
