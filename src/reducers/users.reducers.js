@@ -74,10 +74,16 @@ const reducer = (state = initialState, action) => {
       };
 
     case UPDATE_USER_FAIL:
-      return {
-        ...state,
-        loading: false,
-      };
+      return state.users.flatMap((user) => {
+        if (user.id === action.payload.id) {
+          return {
+            ...state,
+            loading: false,
+          };
+        } else {
+          return user;
+        }
+      });
 
     case DELETE_USER_ACTION:
       return {
@@ -88,7 +94,7 @@ const reducer = (state = initialState, action) => {
     case DELETE_USER_SUCCESS:
       return {
         ...state,
-        users: [...state.users, action.payload],
+        users: [...state.users.filter(({ id }) => id !== action.payload.id)],
         loading: false,
       };
 

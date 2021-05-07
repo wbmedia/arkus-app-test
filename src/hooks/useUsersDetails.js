@@ -21,12 +21,12 @@ export default function useUserDetails() {
           avatar,
         })
       );
+
       setFirstName('');
       setLastName('');
       setEmail('');
       setAvatar('');
       setError(null);
-      setOpen(false);
     } else {
       setError('All Fields are requied');
     }

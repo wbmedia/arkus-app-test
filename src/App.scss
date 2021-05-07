@@ -43,10 +43,17 @@ body {
   .column {
     flex: 1;
   }
+  .button {
+    bottom: -85px !important;
+  }
 }
 
 @media screen and (min-width: 375px) {
   .add-button {
     position: fixed !important;
+  }
+
+  .button {
+    bottom: -65px !important;
   }
 }
